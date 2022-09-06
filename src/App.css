@@ -1,38 +1,131 @@
-.App {
+:root {
+  --gradient-color: linear-gradient(to right, #672280, #A626D3 );
+  --meme-text-color: #0D0D0D;
+  --border-color: #D5D4D8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  color: #FFFFFF;
+}
+
+.header {
+  height: 65px;
+  width: 100%;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: var(--gradient-color);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 36px;
+  margin-bottom: 36px;
+}
+
+.header--img {
+  width: 31px;
+  height: 26px;
+  margin-right: 6px;
+}
+
+.header--title {
+  font-size: 20px;
+}
+
+.header--left {
+  display: flex;
+  align-items: center;
+}
+
+.header--text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.meme--section {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.meme--container {
+  margin-block: 15px;
+  padding: 0 36px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.meme--form {
+  margin-block: 15px;
+  display: grid;
+  grid-template:
+                "a b" 40px
+                "c c" 40px / 1fr 1fr;
+  gap: 17px;
+}
+
+.top--text {
+  grid-area: a;
+}
+
+.bottom--text {
+  grid-area: b;
+}
+
+.top--text, .bottom--text {
+  border-style: solid;
+  border-color: var(--border-color);
+  border-radius: 5px;
+  border-width: 1px;
+  color: var(--meme-text-color);
+  height: 35px;
+  padding: 10px;
+}
+
+.top--text:focus, .bottom--text:focus {
+  outline: none;
+}
+
+.btn--fetch {
+  grid-area: c;
+  /* grid-column: 1 / -1; */
+  background: var(--gradient-color);
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: inherit;
+  height: 40px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.meme {
+  position: relative;
+  margin-top: 20px;
+  width: 477px;
+}
+
+.meme--img {
+  width: 477px;
+}
+
+.meme--text {
+  margin: 0;
+  padding: 0 0.5rem;
+  position: absolute;
+  text-shadow: 3px 3px 3px #0D0D0D;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.top {
+  top: 0.5rem;
+  left: 0;
+  right: 0;
+}
+
+.bottom {
+  bottom: 1rem;
+  left: 0;
+  right: 0;
 }
